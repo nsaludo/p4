@@ -118,7 +118,7 @@ class AnnouncementController extends Controller {
         $announcement->save();
 
         \Session::flash('message','Your changes were saved.');
-        return redirect('/announcement/edit/'.$request->id);
+        return redirect('/announcement/show/'.$request->id);
 
     }
 
