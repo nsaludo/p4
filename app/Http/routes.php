@@ -1,31 +1,41 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+    # Show login form
+    Route::get('/login', 'Auth\AuthController@getLogin');
 
-Route::group(['middleware' => ['web']], function () {
-    //
+    # Process login form
+    Route::post('/login', 'Auth\AuthController@postLogin');
+
+    # Process logout
+    Route::get('/logout', 'Auth\AuthController@logout');
+
+    # Show registration form
+    Route::get('/register', 'Auth\AuthController@getRegister');
+
+    # Process registration form
+    Route::post('/register', 'Auth\AuthController@postRegister');
+
+    Route::get('/announcements', 'AnnouncementController@getIndex');
+
+    Route::get('/announcement/create', 'AnnouncementController@getCreate');
+
+    Route::post('/announcement/create', 'AnnouncementController@postCreate');
+
+    Route::get('/announcement/edit/{id?}', 'AnnouncementController@getEdit');
+
+    Route::post('/announcement/edit', 'AnnouncementController@postEdit');
+
+    Route::get('/announcement/show/{id?}', 'AnnouncementController@getShow');
+
+    Route::get('/announcement/confirm-delete/{id?}', 'AnnouncementController@getConfirmDelete');
+
+    Route::get('/announcement/delete/{id?}', 'AnnouncementController@getDelete');
+
 });
