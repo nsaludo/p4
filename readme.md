@@ -11,6 +11,7 @@
 Communiquety is web application mimics a town crier that provides important community announcements and events as well as individual notifications to members of gated communities / Coops / Condos via email. 
 
 Time permitting, this application may also include features to send notification via text and social channels like Facebook and Twitter, can be used by members to pay monthly Housing Association fees, Clubhouse and pool reservations.
+
 ----
 
 ## Demo
