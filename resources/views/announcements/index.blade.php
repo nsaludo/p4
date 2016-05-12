@@ -9,7 +9,7 @@
 
 @section('content')
 
-    <h1>All the announcements</h1>
+    <h1>All Announcements</h1>
 
     @if(sizeof($announcements) == 0)
         You have not added any announcements, you can <a href='/announcement/create'>add a announcement now to get started</a>.

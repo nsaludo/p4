@@ -5,8 +5,6 @@
 @stop
 
 @section('content')
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -33,8 +31,8 @@
                                 <label class="col-md-4 control-label">Details</label>
 
                                 <div class="col-md-6">
-                                    <input type="textarea" class="form-control" name="details" value="{{ $announcement->details }}">
-
+                                    <textarea type="text" class="form-control" name="details" rows="5">{{ $announcement->details }}
+                                    </textarea>
                                     @if ($errors->has('details'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('details') }}</strong>
@@ -55,5 +53,4 @@
             </div>
         </div>
     </div>
-
 @stop

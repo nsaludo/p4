@@ -30,8 +30,8 @@ Add a new announcement
                                 <label class="col-md-4 control-label">Details</label>
 
                                 <div class="col-md-6">
-                                    <input type="details" class="form-control" name="details" value="{{ old('title') }}">
-
+                                    <textarea type="text" class="form-control" name="details">{{ old('details') }}
+                                    </textarea>
                                     @if ($errors->has('details'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('details') }}</strong>
